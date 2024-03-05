@@ -1,0 +1,29 @@
+@page
+@model TaskKeep.Pages.Todos
+@{
+    ViewData["Title"] = "Todos";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    Hello form the todos side!
+    <div>
+        @if(Model.Todo is null){
+            <p>No Data to fetch</p>
+        }
+        else{
+            <ul>
+                @foreach(var task in Model.Todo){
+                    <div>
+                        <p>@task.Id</p>
+                        <p>@task.TaskName</p>
+                        <p>
+                            @task.IsComplete
+                        </p>
+                    </div>
+                }
+            </ul>
+        }
+    </div>
+</div>
